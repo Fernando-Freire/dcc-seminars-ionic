@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Register } from '../register/register';
 import { Storage } from '@ionic/storage';
+import { Http, RequestOptions, Headers } from '@angular/http';
+import { Seminarsstudent } from '../seminarsstudent/seminarsstudent';
+
 
 @Component({
   selector: 'page-home',
@@ -10,29 +12,32 @@ import { Storage } from '@ionic/storage';
 export class HomePage {
   private usernusp:any;
   private userpassword:any ;
-  private markli: false ;
 
-  constructor(public navCtrl: NavController , public storage : Storage) {
-  }
-    pushPage(){
-  // push another page onto the navigation stack
-  // causing the nav controller to transition to the new page
-  // optional data can also be passed to the pushed page.
-        this.navCtrl.push( Register );
+  constructor(public navCtrl: NavController , public storage : Storage,private  http : Http) {
   }
 
+  login(){
+    let headers = new Headers({"Content-Type": "application/x-www-form-urlencoded"});
+    let options = new RequestOptions({ headers: headers});
+
+     this.http.post(
+       "/api/login/student",
+       `nusp=${this.usernusp}&pass=${this.userpassword}`,
+       options
+     ).subscribe(
+         (response) => { let wasSuccessful = response.json().success
+           if (wasSuccessful){
+             this.navCtrl.push( Seminarsstudent);
+           }
+          else{
+
+          }
 
 
 
 
-  if(markli){
-    this.storage.set('nusp',this.usernusp);
-    this.storage.set('pass',this.userpassword);
-
-  }
-
-  Login(){
-
+             }
+       )
   }
 
 }

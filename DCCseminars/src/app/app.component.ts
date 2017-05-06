@@ -3,14 +3,15 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Auth } from '../providers/auth';
-import { HomePage } from '../pages/home/home';
 import { Storage } from '@ionic/storage';
+import { Choice } from '../pages/choice/choice';
+
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = Choice;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, auth: Auth, storage : Storage) {
     platform.ready().then(() => {

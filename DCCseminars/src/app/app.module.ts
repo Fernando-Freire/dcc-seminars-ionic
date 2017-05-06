@@ -7,9 +7,17 @@ import { AboutPage } from '../pages/about/about';
 import { Register } from '../pages/register/register';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { Choice } from '../pages/choice/choice';
 import { Auth } from '../providers/auth';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { HttpModule } from '@angular/http';
+import { Loginprofessor } from '../pages/loginprofessor/loginprofessor';
+import { Updateprofessor } from '../pages/updateprofessor/updateprofessor';
+import { Updatestudent } from '../pages/updatestudent/updatestudent';
+import { Optionsprofessor } from '../pages/optionsprofessor/optionsprofessor';
+import { Optionsstudent } from '../pages/optionsstudent/optionsstudent';
+import { Seminarsstudent } from '../pages/seminarsstudent/seminarsstudent';
 
 @NgModule({
   declarations: [
@@ -17,12 +25,20 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     Register,
     HomePage,
-    TabsPage
+    TabsPage,
+    Choice,
+    Loginprofessor,
+    Updateprofessor,
+    Updatestudent,
+    Optionsprofessor,
+    Optionsstudent,
+    Seminarsstudent
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot(MyApp)
+    IonicStorageModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -30,7 +46,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     Register,
     HomePage,
-    TabsPage
+    TabsPage,
+    Choice,
+    Loginprofessor,
+    Updatestudent,
+    Updateprofessor,
+    Optionsprofessor,
+    Optionsstudent,
+    Seminarsstudent
   ],
 
   providers: [

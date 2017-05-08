@@ -18,6 +18,8 @@ import { Updatestudent } from '../pages/updatestudent/updatestudent';
 import { Optionsprofessor } from '../pages/optionsprofessor/optionsprofessor';
 import { Optionsstudent } from '../pages/optionsstudent/optionsstudent';
 import { Seminarsstudent } from '../pages/seminarsstudent/seminarsstudent';
+import { Seminarsprofessor } from '../pages/seminarsprofessor/seminarsprofessor';
+import { Listprofessors } from '../pages/listprofessors/listprofessors';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { Seminarsstudent } from '../pages/seminarsstudent/seminarsstudent';
     Updatestudent,
     Optionsprofessor,
     Optionsstudent,
-    Seminarsstudent
+    Seminarsstudent,
+    seminarsprofessor,
+    Listprofessors
   ],
   imports: [
     BrowserModule,
@@ -53,7 +57,9 @@ import { Seminarsstudent } from '../pages/seminarsstudent/seminarsstudent';
     Updateprofessor,
     Optionsprofessor,
     Optionsstudent,
-    Seminarsstudent
+    Seminarsstudent,
+    Seminarsprofessor,
+    Listprofessors
   ],
 
   providers: [

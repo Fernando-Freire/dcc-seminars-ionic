@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { Optionsprofessor } from '../optionsprofessor/optionsprofessor';
 import { Http } from '@angular/http';
 /**
@@ -15,7 +15,7 @@ import { Http } from '@angular/http';
 })
 export class Loginprofessor {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http, private toastCtrl: ToastController) {
   }
 
 

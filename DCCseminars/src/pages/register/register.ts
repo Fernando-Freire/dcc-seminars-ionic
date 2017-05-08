@@ -33,7 +33,7 @@ export class Register {
       position: 'bottom'
     });
 
-    let toast3 = this.toastCtrl.create({
+    let toast = this.toastCtrl.create({
       message: 'Erro: campos invalidos',
       duration: 3000,
       position: 'bottom'
@@ -48,8 +48,8 @@ export class Register {
             toast1.present();
           }
          else{
-        
-           toast3.present();
+
+           toast.present();
          }
        }
       )

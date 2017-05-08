@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { Seminar } from '../../app/seminar';
+import { Updatestudent } from '../updatestudent/updatestudent';
+import { Choice } from '../choice/choice';
 
 /**
  * Generated class for the Seminarsstudent page.
@@ -28,5 +30,12 @@ export class Seminarsstudent {
       (error) => {
       }
     )
+  }
+
+  updatestudent(){
+    this.navCtrl.push(Updatestudent);
+  }
+  logout(){
+    this.navCtrl.push(Choice);
   }
 }

@@ -20,6 +20,11 @@ import { Optionsstudent } from '../pages/optionsstudent/optionsstudent';
 import { Seminarsstudent } from '../pages/seminarsstudent/seminarsstudent';
 import { Seminarsprofessor } from '../pages/seminarsprofessor/seminarsprofessor';
 import { Listprofessors } from '../pages/listprofessors/listprofessors';
+import { Deletestudent } from '../pages/deletestudent/deletestudent';
+import { Addprofessor } from '../pages/addprofessor/addprofessor';
+import { Editprofessor } from '../pages/editprofessor/editprofessor';
+import { Editseminar } from '../pages/editseminar/editseminar';
+import { Addseminar } from '../pages/addseminar/addseminar';
 
 @NgModule({
   declarations: [
@@ -35,8 +40,13 @@ import { Listprofessors } from '../pages/listprofessors/listprofessors';
     Optionsprofessor,
     Optionsstudent,
     Seminarsstudent,
-    seminarsprofessor,
-    Listprofessors
+    Seminarsprofessor,
+    Listprofessors,
+    Deletestudent,
+    Addprofessor,
+    Editprofessor,
+    Addseminar,
+    Editseminar
   ],
   imports: [
     BrowserModule,
@@ -59,7 +69,12 @@ import { Listprofessors } from '../pages/listprofessors/listprofessors';
     Optionsstudent,
     Seminarsstudent,
     Seminarsprofessor,
-    Listprofessors
+    Listprofessors,
+    Deletestudent,
+    Addprofessor,
+    Editprofessor,
+    Addseminar,
+    Editseminar
   ],
 
   providers: [

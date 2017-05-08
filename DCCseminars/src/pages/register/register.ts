@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { Http, RequestOptions, Headers } from '@angular/http';
 /**
  * Generated class for the Register page.
  *
@@ -13,12 +13,41 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'register.html',
 })
 export class Register {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private usernusp:any;
+  private userpassword:any ;
+  private username:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams , private toastCtrl: ToastController,private http: Http) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Register');
+  registerstudent(){
+    let headers = new Headers({"Content-Type": "application/x-www-form-urlencoded"});
+    let options = new RequestOptions({ headers: headers});
+    let toast1 = this.toastCtrl.create({
+      message: 'Aluno registrado com sucesso',
+      duration: 3000,
+      position: 'bottom'
+    });
+    let toast2 = this.toastCtrl.create({
+      message: 'Erro: Aluno ja cadastrado ou campos invalidos',
+      duration: 3000,
+      position: 'bottom'
+    });
+    this.http.post(
+      "/api/student/add",
+      `nusp=${this.usernusp}&pass=${this.userpassword}&name=${this.username}`,
+      options
+      ).subscribe(
+        (response) => { let wasSuccessful = response.json().success
+          if (wasSuccessful){
+            toast1.present();
+          }
+         else{
+           toast2.present();
+         }
+       }
+      )
+
+
   }
 
 }

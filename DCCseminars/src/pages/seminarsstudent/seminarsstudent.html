@@ -10,10 +10,25 @@
     <ion-title>Seminarios</ion-title>
   </ion-navbar>
 
+<button ion-button menuToggle>Opções</button>
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-menu [content]="Aluno">
+    <ion-content>
+
+        <div padding>
+          <button ion-button (click)="updatestudent()" block>Alterar Cadastro</button>
+          <button ion-button (click)="logout()" block>Logout</button>
+        </div>
+
+    </ion-content>
+  </ion-menu>
+
+  <ion-nav #Aluno [root]="rootPage"></ion-nav>
+
   <div padding *ngFor="let seminar of seminarList">
     {{seminar.name }}
   </div>

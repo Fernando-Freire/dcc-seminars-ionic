@@ -28,7 +28,13 @@ export class Register {
       position: 'bottom'
     });
     let toast2 = this.toastCtrl.create({
-      message: 'Erro: Aluno ja cadastrado ou campos invalidos',
+      message: 'Erro: Aluno ja cadastrado ',
+      duration: 3000,
+      position: 'bottom'
+    });
+
+    let toast3 = this.toastCtrl.create({
+      message: 'Erro: campos invalidos',
       duration: 3000,
       position: 'bottom'
     });
@@ -42,7 +48,8 @@ export class Register {
             toast1.present();
           }
          else{
-           toast2.present();
+        
+           toast3.present();
          }
        }
       )

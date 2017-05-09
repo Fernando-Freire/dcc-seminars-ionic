@@ -29,8 +29,8 @@
 
   <ion-nav #Seminarios [root]="rootPage"></ion-nav>
 
-  <div padding *ngFor="let seminar of seminarList">
-    {{seminar.name}}
+  <div padding *ngFor="let seminar of seminarList" (click)="seminarpageprofessor(seminar)" >
+    {{"Nome = "+seminar.name}} {{"Id = "+seminar.id}}
   </div>
 
 

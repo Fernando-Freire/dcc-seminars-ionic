@@ -19,7 +19,8 @@ export class Addseminar {
             private toastCtrl: ToastController,private http: Http) {
   }
 
-  registerprofessor(){
+
+  registerseminar(){
     let headers = new Headers({"Content-Type": "application/x-www-form-urlencoded"});
     let options = new RequestOptions({ headers: headers});
     let toast1 = this.toastCtrl.create({
@@ -33,11 +34,12 @@ export class Addseminar {
       position: 'bottom'
     });
     this.http.post(
-      "/api/teacher/add",
+      "/api/seminar/add",
       `name=${this.seminarname}`,
       options
       ).subscribe(
         (response) => { let wasSuccessful = response.json().success
+          console.log(response.json())
           if (wasSuccessful){
             toast1.present();
           }

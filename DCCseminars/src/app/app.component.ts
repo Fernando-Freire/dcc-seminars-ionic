@@ -6,7 +6,6 @@ import { Auth } from '../providers/auth';
 import { Storage } from '@ionic/storage';
 import { Choice } from '../pages/choice/choice';
 
-
 @Component({
   templateUrl: 'app.html'
 })

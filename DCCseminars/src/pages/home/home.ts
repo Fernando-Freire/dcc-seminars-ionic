@@ -21,28 +21,24 @@ export class HomePage {
     let options = new RequestOptions({ headers: headers});
 
     let toast = this.toastCtrl.create({
-      message: 'Erro: campos invalidos',
+      message: 'Erro: campos inválidos',
       duration: 3000,
       position: 'bottom'
     });
-     this.http.post(
-       "/api/login/student",
-       `nusp=${this.usernusp}&pass=${this.userpassword}`,
-       options
-     ).subscribe(
-         (response) => { let wasSuccessful = response.json().success
-           if (wasSuccessful){
-             this.navCtrl.push( Seminarsstudent);
-           }
-          else{
-            toast.present()
-          }
 
-
-
-
-             }
-       )
+    this.http.post(
+      "/api/login/student",
+      `nusp=${this.usernusp}&pass=${this.userpassword}`,
+      options
+    ).subscribe(
+      (response) => { let wasSuccessful = response.json().success
+        if (wasSuccessful){
+          this.navCtrl.setRoot(Seminarsstudent);
+        }
+        else {
+          toast.present()
+        }
+      }
+    )
   }
-
 }

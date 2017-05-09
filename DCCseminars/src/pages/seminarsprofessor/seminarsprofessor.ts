@@ -33,7 +33,6 @@ export class Seminarsprofessor {
     )
   }
 
-
   seminarpageprofessor(){
     this.navCtrl.push(Editseminar);
   }

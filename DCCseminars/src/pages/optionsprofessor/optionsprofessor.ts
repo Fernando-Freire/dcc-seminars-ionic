@@ -32,9 +32,6 @@ export class Optionsprofessor {
     this.navCtrl.push(Listprofessors);
   }
 
-
   ionViewDidLoad(){
-    console.log('ionViewDidLoad Optionsprofessor');
   }
-
 }

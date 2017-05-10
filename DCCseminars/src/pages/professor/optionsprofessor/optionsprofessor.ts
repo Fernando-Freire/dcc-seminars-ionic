@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Seminarsprofessor } from '../seminarsprofessor/seminarsprofessor';
-import { Choice } from '../choice/choice';
-import { Listprofessors } from '../listprofessors/listprofessors';
-import { Deletestudent } from '../deletestudent/deletestudent';
+import { Choice } from '../../choice/choice';
+
 /**
  * Generated class for the Optionsprofessor page.
  *
@@ -20,7 +19,6 @@ export class Optionsprofessor {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
   deletestudent(){
-    this.navCtrl.push(Deletestudent)
   }
   logout(){
     this.navCtrl.push(Choice);
@@ -29,7 +27,6 @@ export class Optionsprofessor {
     this.navCtrl.push(Seminarsprofessor);
   }
   professors(){
-    this.navCtrl.push(Listprofessors);
   }
 
   ionViewDidLoad(){

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController,ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { Http, RequestOptions, Headers } from '@angular/http';
-import { Seminarsstudent } from '../../seminarsstudent/seminarsstudent';
+import { Seminarsstudent } from '../seminarsstudent/seminarsstudent';
 
 @Component({
   selector: 'page-login-student',

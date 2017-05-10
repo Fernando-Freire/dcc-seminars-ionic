@@ -3,26 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicStorageModule } from '@ionic/storage';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { Register } from '../pages/register/register';
+import { Register } from '../pages/student/register/register';
 import { Loginstudent } from '../pages/student/login/login';
 import { Choice } from '../pages/choice/choice';
 import { Auth } from '../providers/auth';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from '@angular/http';
-import { Loginprofessor } from '../pages/loginprofessor/loginprofessor';
-import { Updateprofessor } from '../pages/updateprofessor/updateprofessor';
-import { Updatestudent } from '../pages/updatestudent/updatestudent';
-import { Optionsprofessor } from '../pages/optionsprofessor/optionsprofessor';
-import { Optionsstudent } from '../pages/optionsstudent/optionsstudent';
-import { Seminarsstudent } from '../pages/seminarsstudent/seminarsstudent';
-import { Seminarsprofessor } from '../pages/seminarsprofessor/seminarsprofessor';
-import { Listprofessors } from '../pages/listprofessors/listprofessors';
-import { Deletestudent } from '../pages/deletestudent/deletestudent';
-import { Addprofessor } from '../pages/addprofessor/addprofessor';
-import { Editprofessor } from '../pages/editprofessor/editprofessor';
-import { Editseminar } from '../pages/editseminar/editseminar';
-import { Addseminar } from '../pages/addseminar/addseminar';
+import { Loginprofessor } from '../pages/professor/loginprofessor/loginprofessor';
+import { Updateprofessor } from '../pages/professor/updateprofessor/updateprofessor';
+import { Updatestudent } from '../pages/student/updatestudent/updatestudent';
+import { Optionsprofessor } from '../pages/professor/optionsprofessor/optionsprofessor';
+import { Optionsstudent } from '../pages/student/optionsstudent/optionsstudent';
+import { Seminarsstudent } from '../pages/student/seminarsstudent/seminarsstudent';
+import { Seminarsprofessor } from '../pages/professor/seminarsprofessor/seminarsprofessor';
+import { Addprofessor } from '../pages/professor/addprofessor/addprofessor';
+import { Editprofessor } from '../pages/professor/editprofessor/editprofessor';
+import { Editseminar } from '../pages/professor/editseminar/editseminar';
+import { Addseminar } from '../pages/professor/addseminar/addseminar';
 
 @NgModule({
   declarations: [
@@ -37,8 +35,6 @@ import { Addseminar } from '../pages/addseminar/addseminar';
     Optionsstudent,
     Seminarsstudent,
     Seminarsprofessor,
-    Listprofessors,
-    Deletestudent,
     Addprofessor,
     Editprofessor,
     Addseminar,
@@ -63,8 +59,6 @@ import { Addseminar } from '../pages/addseminar/addseminar';
     Optionsstudent,
     Seminarsstudent,
     Seminarsprofessor,
-    Listprofessors,
-    Deletestudent,
     Addprofessor,
     Editprofessor,
     Addseminar,

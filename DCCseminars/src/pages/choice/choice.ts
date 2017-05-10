@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Loginstudent } from '../student/login/login';
-import { Register } from '../register/register';
-import { Loginprofessor } from '../loginprofessor/loginprofessor';
+import { Register } from '../student/register/register';
+import { Loginprofessor } from '../professor/loginprofessor/loginprofessor';
 
 @IonicPage()
 @Component({

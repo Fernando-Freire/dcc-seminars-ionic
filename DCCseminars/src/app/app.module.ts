@@ -4,7 +4,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { Register } from '../pages/register/register';
-import { HomePage } from '../pages/home/home';
+import { Loginstudent } from '../pages/student/login/login';
 import { Choice } from '../pages/choice/choice';
 import { Auth } from '../providers/auth';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -28,7 +28,7 @@ import { Addseminar } from '../pages/addseminar/addseminar';
   declarations: [
     MyApp,
     Register,
-    HomePage,
+    Loginstudent,
     Choice,
     Loginprofessor,
     Updateprofessor,
@@ -54,7 +54,7 @@ import { Addseminar } from '../pages/addseminar/addseminar';
   entryComponents: [
     MyApp,
     Register,
-    HomePage,
+    Loginstudent,
     Choice,
     Loginprofessor,
     Updatestudent,

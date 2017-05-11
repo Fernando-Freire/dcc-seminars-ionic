@@ -4,7 +4,6 @@ import { Http } from '@angular/http';
 import { Seminar } from '../../../app/seminar';
 import { Editseminar } from '../editseminar/editseminar';
 import { Addseminar } from '../addseminar/addseminar';
-import { Seminardetail } from '../seminardetail/seminardetail';
 
 @IonicPage()
 @Component({

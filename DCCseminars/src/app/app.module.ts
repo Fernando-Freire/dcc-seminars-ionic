@@ -14,7 +14,6 @@ import { Loginprofessor } from '../pages/professor/loginprofessor/loginprofessor
 import { Updateprofessor } from '../pages/professor/updateprofessor/updateprofessor';
 import { Updatestudent } from '../pages/student/updatestudent/updatestudent';
 import { Optionsprofessor } from '../pages/professor/optionsprofessor/optionsprofessor';
-import { Optionsstudent } from '../pages/student/optionsstudent/optionsstudent';
 import { Seminarsstudent } from '../pages/student/seminarsstudent/seminarsstudent';
 import { Seminarsprofessor } from '../pages/professor/seminarsprofessor/seminarsprofessor';
 import { Addprofessor } from '../pages/professor/addprofessor/addprofessor';
@@ -33,7 +32,6 @@ import { Seminardetail } from '../pages/student/seminardetail/seminardetail';
     Updateprofessor,
     Updatestudent,
     Optionsprofessor,
-    Optionsstudent,
     Seminarsstudent,
     Seminarsprofessor,
     Addprofessor,
@@ -58,7 +56,6 @@ import { Seminardetail } from '../pages/student/seminardetail/seminardetail';
     Updatestudent,
     Updateprofessor,
     Optionsprofessor,
-    Optionsstudent,
     Seminarsstudent,
     Seminarsprofessor,
     Addprofessor,

@@ -28,12 +28,6 @@ export class Register {
       duration: 3000,
       position: 'bottom'
     });
-    let toast2 = this.toastCtrl.create({
-      message: 'Erro: Aluno ja cadastrado ',
-      duration: 3000,
-      position: 'bottom'
-    });
-
     let toast = this.toastCtrl.create({
       message: 'Erro: campos invalidos',
       duration: 3000,

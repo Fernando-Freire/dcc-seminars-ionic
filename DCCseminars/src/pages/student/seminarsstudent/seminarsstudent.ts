@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 import { Seminar } from '../../../app/seminar';
 import { Updatestudent } from '../updatestudent/updatestudent';
 import { Choice } from '../../choice/choice';
+import { Seminardetail } from '../seminardetail/seminardetail';
 
 @IonicPage()
 @Component({
@@ -27,6 +28,10 @@ export class Seminarsstudent {
       (error) => {
       }
     )
+  }
+
+  seminarDetail(seminar) {
+    this.navCtrl.push(Seminardetail, {id: seminar.id})
   }
 
   updatestudent(){

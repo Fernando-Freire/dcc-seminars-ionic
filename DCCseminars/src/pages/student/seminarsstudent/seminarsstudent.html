@@ -7,12 +7,14 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Seminarios</ion-title>
+    <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+    <ion-title>Seminários</ion-title>
   </ion-navbar>
 
-<button ion-button menuToggle>Opções</button>
+
 </ion-header>
 
+<ion-nav #mycontent [root]="rootPage"></ion-nav>
 
 <ion-content padding>
 
@@ -30,7 +32,7 @@
   <ion-nav #Aluno [root]="rootPage"></ion-nav>
 
   <ion-list>
-    <ion-item *ngFor="let seminar of seminarList">
+    <ion-item *ngFor="let seminar of seminarList" (click)="seminarDetail(seminar)">
       {{seminar.name}}
     </ion-item>
   </ion-list>

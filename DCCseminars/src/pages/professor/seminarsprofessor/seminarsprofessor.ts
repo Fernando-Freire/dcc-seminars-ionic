@@ -2,8 +2,10 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { Seminar } from '../../../app/seminar';
-import { Editseminar } from '../editseminar/editseminar';
-import { Addseminar } from '../addseminar/addseminar';
+import { Addprofessor } from '../addprofessor/addprofessor';
+import { Editprofessor } from '../editprofessor/editprofessor';
+import { Choice } from '../../choice/choice';
+import { Seminarpageprofessor } from '../seminarpageprofessor/seminarpageprofessor';
 
 @IonicPage()
 @Component({
@@ -29,15 +31,19 @@ export class Seminarsprofessor {
     )
   }
 
-  seminarpageprofessor(){
-    this.navCtrl.push(Editseminar);
+  seminarDetail(seminar) {
+    this.navCtrl.push(Seminarpageprofessor, {id: seminar.id})
   }
 
-  addseminar(){
-    this.navCtrl.push(Addseminar);
+  editProfile() {
+    this.navCtrl.push(Editprofessor)
   }
 
-  editseminar(){
-    this.navCtrl.push(Editseminar);
+  addProfessor() {
+    this.navCtrl.push(Addprofessor);
+  }
+
+  logout() {
+    this.navCtrl.setRoot(Choice);
   }
 }

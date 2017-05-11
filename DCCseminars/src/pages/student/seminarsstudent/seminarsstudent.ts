@@ -39,6 +39,6 @@ export class Seminarsstudent {
   }
 
   logout(){
-    this.navCtrl.push(Choice);
+    this.navCtrl.setRoot(Choice);
   }
 }

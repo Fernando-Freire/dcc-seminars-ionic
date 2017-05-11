@@ -1,36 +1,27 @@
-<!--
-  Generated template for the Seminarsstudent page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Seminarios</ion-title>
+    <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+    <ion-title>Seminários</ion-title>
   </ion-navbar>
-
-<button ion-button menuToggle>Opções</button>
 </ion-header>
 
 <ion-content padding>
-
   <ion-menu [content]="Seminarios">
     <ion-content>
-
         <div padding>
-          <button ion-button (click)="addseminar()" block>Adicionar Seminario</button>
-          <button ion-button (click)="editseminar()" block>Editar ou Remover Seminario</button>
+          <button ion-button (click)="editProfile()" block>Editar perfil</button>
+          <button ion-button (click)="addProfessor()" block>Cadastrar professor</button>
+          <button ion-button (click)="logout()" block>Sair</button>
         </div>
-
     </ion-content>
   </ion-menu>
 
   <ion-nav #Seminarios [root]="rootPage"></ion-nav>
 
   <ion-list>
-    <ion-item *ngFor="let seminar of seminarList" (click)="seminarpageprofessor(seminar)">
-      {{"Nome = "+seminar.name}} {{"Id = "+seminar.id}}
+    <ion-item *ngFor="let seminar of seminarList" (click)="seminarDetail(seminar)">
+      {{seminar.name}}
     </ion-item>
   </ion-list>
 </ion-content>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
-import { Optionsprofessor } from '../optionsprofessor/optionsprofessor';
+import { Seminarsprofessor } from '../seminarsprofessor/seminarsprofessor';
 import { Http, RequestOptions, Headers } from '@angular/http';
 /**
  * Generated class for the Loginprofessor page.
@@ -43,7 +43,7 @@ export class Loginprofessor {
       (response) => {
         let wasSuccessful = response.json().success
         if (wasSuccessful){
-          this.navCtrl.setRoot(Optionsprofessor);
+          this.navCtrl.setRoot(Seminarsprofessor);
         }
         else {
           toast.present()

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import { Seminar } from '../../../app/seminar';
+import { Addattendance } from '../addattendance/addattendance';
 
 @IonicPage()
 @Component({
@@ -28,7 +29,7 @@ export class Seminarpageprofessor {
     let headers = new Headers({"Content-Type": "application/x-www-form-urlencoded"});
     let options = new RequestOptions({ headers: headers});
 
-    this.http.get('/api/seminar/get/' + this.id).subscribe(
+    this.http.get('http://207.38.82.139:8001/seminar/get/' + this.id).subscribe(
       (response) => {
         this.seminar = response.json().data;
         this.loadingSeminar = false;
@@ -37,7 +38,7 @@ export class Seminarpageprofessor {
       }
     )
     this.http.post(
-      "/api/attendence/listStudents",
+      "http://207.38.82.139:8001/attendence/listStudents",
       `seminar_id=${this.id}`,
       options
     ).subscribe(
@@ -49,5 +50,9 @@ export class Seminarpageprofessor {
       (error) => {
       }
     )
+  }
+
+  addAttendance() {
+    this.navCtrl.push(Addattendance, {id: this.id})
   }
 }

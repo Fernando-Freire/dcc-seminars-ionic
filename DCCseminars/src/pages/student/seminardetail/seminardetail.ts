@@ -23,7 +23,7 @@ export class Seminardetail {
   }
 
   ionViewDidLoad() {
-    this.http.get('/api/seminar/get/' + this.id).subscribe(
+    this.http.get('http://207.38.82.139:8001/seminar/get/' + this.id).subscribe(
       (response) => {
         this.seminar = response.json().data as Seminar
         this.loading = false;

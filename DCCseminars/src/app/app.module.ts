@@ -21,6 +21,7 @@ import { Editprofessor } from '../pages/professor/editprofessor/editprofessor';
 import { Editseminar } from '../pages/professor/editseminar/editseminar';
 import { Addseminar } from '../pages/professor/addseminar/addseminar';
 import { Seminardetail } from '../pages/student/seminardetail/seminardetail';
+import { Addattendance } from '../pages/professor/addattendance/addattendance';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { Seminardetail } from '../pages/student/seminardetail/seminardetail';
     Editprofessor,
     Addseminar,
     Editseminar,
-    Seminardetail
+    Seminardetail,
+    Addattendance
   ],
   imports: [
     BrowserModule,
@@ -62,7 +64,8 @@ import { Seminardetail } from '../pages/student/seminardetail/seminardetail';
     Editprofessor,
     Addseminar,
     Editseminar,
-    Seminardetail
+    Seminardetail,
+    Addattendance
   ],
 
   providers: [

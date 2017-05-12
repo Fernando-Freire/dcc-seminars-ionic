@@ -34,7 +34,7 @@ export class Register {
       position: 'bottom'
     });
     this.http.post(
-      "/api/student/add",
+      "http://207.38.82.139:8001/student/add",
       `nusp=${this.usernusp}&pass=${this.userpassword}&name=${this.username}`,
       options
       ).subscribe(

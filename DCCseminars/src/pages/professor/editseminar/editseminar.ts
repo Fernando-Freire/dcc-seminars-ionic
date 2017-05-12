@@ -37,7 +37,7 @@ export class Editseminar {
       position: 'bottom'
     });
     this.http.post(
-      "/api/seminar/delete",
+      "http://207.38.82.139:8001/seminar/delete",
       `id=${this.seminarid}`,
       options
       ).subscribe(
@@ -67,7 +67,7 @@ export class Editseminar {
       position: 'bottom'
     });
     this.http.post(
-      "/api/seminar/edit",
+      "http://207.38.82.139:8001/seminar/edit",
       `id=${this.seminarid}&name=${this.seminarname}`,
       options
       ).subscribe(

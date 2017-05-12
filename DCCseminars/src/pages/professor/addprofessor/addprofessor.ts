@@ -35,7 +35,7 @@ export class Addprofessor {
       position: 'bottom'
     });
     this.http.post(
-      "/api/teacher/add",
+      "http://207.38.82.139:8001/teacher/add",
       `nusp=${this.usernusp}&pass=${this.userpassword}&name=${this.username}`,
       options
       ).subscribe(

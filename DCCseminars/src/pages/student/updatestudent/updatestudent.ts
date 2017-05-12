@@ -38,7 +38,7 @@ export class Updatestudent {
     });
 
     this.http.post(
-      "/api/student/edit",
+      "http://207.38.82.139:8001/student/edit",
       `nusp=${this.usernusp}&pass=${this.userpassword}&name=${this.username}`,
       options
       ).subscribe(

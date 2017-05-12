@@ -34,7 +34,7 @@ export class Addseminar {
       position: 'bottom'
     });
     this.http.post(
-      "/api/seminar/add",
+      "http://207.38.82.139:8001/seminar/add",
       `name=${this.seminarname}`,
       options
       ).subscribe(

@@ -27,11 +27,12 @@ export class Loginstudent {
 
   login() {
     this.http.post(
-      "/api/login/student",
+      "http://207.38.82.139:8001/login/student",
       `nusp=${this.usernusp}&pass=${this.userpassword}`,
       this.loginOptions
     ).subscribe(
       (response) => { let wasSuccessful = response.json().success
+        console.log(response);
         if (wasSuccessful){
           this.navCtrl.setRoot(Seminarsstudent);
         }
@@ -44,6 +45,8 @@ export class Loginstudent {
   }
 
   notifyLoginFailure() {
+    console.log("Notifying login failure student...");
+
     let toast = this.toastCtrl.create({
       message: 'Erro: campos inválidos',
       duration: 3000,

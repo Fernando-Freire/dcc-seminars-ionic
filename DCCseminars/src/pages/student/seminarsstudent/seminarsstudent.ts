@@ -21,7 +21,7 @@ export class Seminarsstudent {
   ) {}
 
   ionViewDidLoad() {
-    this.http.get('/api/seminar').subscribe(
+    this.http.get('http://207.38.82.139:8001/seminar').subscribe(
       (response) => {
         this.seminarList = response.json().data as Seminar[]
       },

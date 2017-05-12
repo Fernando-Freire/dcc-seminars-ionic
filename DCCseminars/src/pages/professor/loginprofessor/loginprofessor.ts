@@ -36,7 +36,7 @@ export class Loginprofessor {
     let options = new RequestOptions({ headers: headers});
 
     this.http.post(
-      "/api/login/teacher",
+      "http://207.38.82.139:8001/login/teacher",
       `nusp=${this.usernusp}&pass=${this.userpassword}`,
       options
     ).subscribe(

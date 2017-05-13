@@ -26,14 +26,14 @@ export class Updatestudent {
   update(){
     let headers = new Headers({"Content-Type": "application/x-www-form-urlencoded"});
     let options = new RequestOptions({ headers: headers});
-    let toast = this.toastCtrl.create({
+    let toasterror = this.toastCtrl.create({
       message: 'Erro: campos invalidos',
       duration: 3000,
       position: 'bottom'
     });
-    let toast1 = this.toastCtrl.create({
-      message: 'Dados Alterados',
-      duration: 3000,
+    let toastsuccess = this.toastCtrl.create({
+      message: 'Seu Cadastro foi Alterado com Sucesso',
+      duration: 5000,
       position: 'bottom'
     });
 
@@ -43,15 +43,13 @@ export class Updatestudent {
       options
       ).subscribe(
         (response) => { let wasSuccessful = response.json().success
-          if (wasSuccessful){
-             toast1.present();
-           }
-         else{
-            toast.present();
+          if (wasSuccessful) {
+             this.navCtrl.pop(toastsuccess.present());
           }
-       }
+          else{
+            toasterror.present();
+          }
+        }
       )
-
-
   }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angular';
 import { Http, RequestOptions, Headers } from '@angular/http';
+import { Seminarsprofessor } from '../seminarsprofessor/seminarsprofessor'
 /**
  * Generated class for the Addseminar page.
  *
@@ -23,12 +24,12 @@ export class Addseminar {
   registerseminar(){
     let headers = new Headers({"Content-Type": "application/x-www-form-urlencoded"});
     let options = new RequestOptions({ headers: headers});
-    let toast1 = this.toastCtrl.create({
-      message: 'Seminario adicionado com sucesso',
-      duration: 3000,
+    let toastsuccess = this.toastCtrl.create({
+      message: 'Seminário adicionado com sucesso',
+      duration: 5000,
       position: 'bottom'
     });
-    let toast = this.toastCtrl.create({
+    let toasterror = this.toastCtrl.create({
       message: 'Erro: campos invalidos',
       duration: 3000,
       position: 'bottom'
@@ -40,18 +41,17 @@ export class Addseminar {
       ).subscribe(
         (response) => { let wasSuccessful = response.json().success
           console.log(response.json())
-          if (wasSuccessful){
-            toast1.present();
+          if (wasSuccessful) {
+            this.navCtrl.pop(toastsuccess.present());
           }
-         else{
-
-           toast.present();
-         }
-       }
+          else {
+           toasterror.present();
+          }
+        }
       )
   }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Addseminar');
+
   }
 
 }

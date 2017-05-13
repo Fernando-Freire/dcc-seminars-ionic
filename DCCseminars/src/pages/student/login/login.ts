@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController,ToastController } from 'ionic-angular';
-import { Storage } from '@ionic/storage';
+import { NativeStorage } from '@ionic-native/native-storage';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import { Seminarsstudent } from '../seminarsstudent/seminarsstudent';
 
@@ -17,7 +17,7 @@ export class Loginstudent {
 
   constructor(
     public navCtrl: NavController,
-    public storage: Storage,
+    public storage: NativeStorage,
     private http: Http,
     private toastCtrl: ToastController
   ) {
@@ -34,6 +34,8 @@ export class Loginstudent {
       (response) => { let wasSuccessful = response.json().success
         console.log(response);
         if (wasSuccessful){
+          this.storage.setItem('studentnusp',this.usernusp);
+          this.storage.setItem('studentpass',this.userpassword);
           this.navCtrl.setRoot(Seminarsstudent);
         }
         else {
@@ -54,5 +56,14 @@ export class Loginstudent {
     });
 
     toast.present()
+  }
+  ionViewDidLoad(){
+    this.storage.getItem('studentnusp').then(
+      () => this.usernusp
+    );
+    this.storage.getItem('studentpass').then(
+      () => this.userpassword
+    );
+
   }
 }

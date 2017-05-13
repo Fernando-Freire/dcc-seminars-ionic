@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { Seminarsprofessor } from '../seminarsprofessor/seminarsprofessor';
 import { Http, RequestOptions, Headers } from '@angular/http';
+import { NativeStorage } from '@ionic-native/native-storage';
 /**
  * Generated class for the Loginprofessor page.
  *
@@ -22,7 +23,8 @@ export class Loginprofessor {
     public navCtrl: NavController,
     public navParams: NavParams,
     private http: Http,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    private storage: NativeStorage
   ) {}
 
   login() {
@@ -43,6 +45,8 @@ export class Loginprofessor {
       (response) => {
         let wasSuccessful = response.json().success
         if (wasSuccessful){
+          this.storage.setItem('professornusp',this.usernusp);
+          this.storage.setItem('professorpass',this.userpassword);
           this.navCtrl.setRoot(Seminarsprofessor);
         }
         else {
@@ -56,5 +60,11 @@ export class Loginprofessor {
   }
 
   ionViewDidLoad() {
+    this.storage.getItem('studentnusp').then(
+      () => this.usernusp
+    );
+    this.storage.getItem('studentpass').then(
+      () => this.userpassword
+    );
   }
 }

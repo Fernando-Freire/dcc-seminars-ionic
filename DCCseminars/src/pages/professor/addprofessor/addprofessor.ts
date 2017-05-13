@@ -24,12 +24,12 @@ export class Addprofessor {
   registerprofessor(){
     let headers = new Headers({"Content-Type": "application/x-www-form-urlencoded"});
     let options = new RequestOptions({ headers: headers});
-    let toast1 = this.toastCtrl.create({
+    let toastsuccess = this.toastCtrl.create({
       message: 'Professor registrado com sucesso',
-      duration: 3000,
+      duration: 5000,
       position: 'bottom'
     });
-    let toast = this.toastCtrl.create({
+    let toasterror = this.toastCtrl.create({
       message: 'Erro: campos invalidos',
       duration: 3000,
       position: 'bottom'
@@ -40,22 +40,17 @@ export class Addprofessor {
       options
       ).subscribe(
         (response) => { let wasSuccessful = response.json().success
-          if (wasSuccessful){
-            toast1.present();
+          if (wasSuccessful) {
+            toastsuccess.present();
           }
          else{
-
-           toast.present();
+           toasterror.present();
          }
-       }
+        }
       )
-
-
-
-
   }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Addprofessor');
+
   }
 
 }

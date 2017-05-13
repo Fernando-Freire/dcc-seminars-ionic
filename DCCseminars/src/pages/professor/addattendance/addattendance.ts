@@ -31,6 +31,11 @@ export class Addattendance {
 
     let headers = new Headers({"Content-Type": "application/x-www-form-urlencoded"});
     let options = new RequestOptions({ headers: headers});
+    let toastsuccess = this.toastCtrl.create({
+      message: 'Presença adicionada',
+      duration: 5000,
+      position: 'bottom'
+    });
 
     this.http.post(
       "http://207.38.82.139:8001/attendence/submit",
@@ -40,7 +45,7 @@ export class Addattendance {
       (response) => {
         let wasSuccessful: boolean = response.json().success;
         if (wasSuccessful) {
-          this.notifySuccess();
+          this.navCtrl.pop(toastsuccess.present());
         } else {
           this.notifyError();
         }
@@ -53,23 +58,13 @@ export class Addattendance {
     )
   }
 
-  notifySuccess() {
-    let toast = this.toastCtrl.create({
-      message: 'Presença adicionada',
-      duration: 3000,
-      position: 'bottom'
-    });
-
-    toast.present();
-  }
-
   notifyError() {
-    let toast = this.toastCtrl.create({
+    let toasterror = this.toastCtrl.create({
       message: 'Erro adicionando presença',
       duration: 3000,
       position: 'bottom'
     });
 
-    toast.present();
+    toasterror.present();
   }
 }

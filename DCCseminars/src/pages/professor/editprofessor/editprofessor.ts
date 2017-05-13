@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { Http, RequestOptions, Headers } from '@angular/http';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 @IonicPage()
 @Component({
@@ -16,20 +17,23 @@ export class Editprofessor {
     public navCtrl: NavController,
     public navParams: NavParams,
     private toastCtrl: ToastController,
-    private http: Http
+    private http: Http,
+    private storage: NativeStorage
   ) {}
 
   updateprofessor() {
     let headers = new Headers({"Content-Type": "application/x-www-form-urlencoded"});
     let options = new RequestOptions({ headers: headers});
-
-    let toast1 = this.toastCtrl.create({
-      message: 'Professor alterado com sucesso',
-      duration: 3000,
+    this.storage.getItem('professornusp').then(
+      () => this.usernusp
+    );
+    let toastsuccess = this.toastCtrl.create({
+      message: 'Cadastro alterado com sucesso',
+      duration: 5000,
       position: 'bottom'
     });
 
-    let toast = this.toastCtrl.create({
+    let toasterror = this.toastCtrl.create({
       message: 'Erro: campos invalidos',
       duration: 3000,
       position: 'bottom'
@@ -42,10 +46,10 @@ export class Editprofessor {
       ).subscribe(
         (response) => { let wasSuccessful = response.json().success
           if (wasSuccessful) {
-            toast1.present();
+            this.navCtrl.pop(toastsuccess.present());
           }
           else {
-            toast.present();
+            toasterror.present();
           }
         }
       )

@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { Seminar } from '../../../app/seminar';
 import { Addprofessor } from '../addprofessor/addprofessor';
+import { Addseminar } from '../addseminar/addseminar';
 import { Editprofessor } from '../editprofessor/editprofessor';
 import { Choice } from '../../choice/choice';
 import { Seminarpageprofessor } from '../seminarpageprofessor/seminarpageprofessor';
@@ -45,5 +46,9 @@ export class Seminarsprofessor {
 
   logout() {
     this.navCtrl.setRoot(Choice);
+  }
+
+  addseminar(){
+    this.navCtrl.push(Addseminar);
   }
 }

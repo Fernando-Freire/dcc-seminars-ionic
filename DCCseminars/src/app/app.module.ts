@@ -22,6 +22,8 @@ import { Editseminar } from '../pages/professor/editseminar/editseminar';
 import { Addseminar } from '../pages/professor/addseminar/addseminar';
 import { Seminardetail } from '../pages/student/seminardetail/seminardetail';
 import { Addattendance } from '../pages/professor/addattendance/addattendance';
+import { NativeStorage } from '@ionic-native/native-storage';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 @NgModule({
   declarations: [
@@ -69,9 +71,10 @@ import { Addattendance } from '../pages/professor/addattendance/addattendance';
   ],
 
   providers: [
-    Storage,
     StatusBar,
+    BarcodeScanner,
     SplashScreen,
+    NativeStorage,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
 		Auth
   ]

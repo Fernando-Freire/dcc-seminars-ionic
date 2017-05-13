@@ -8,7 +8,7 @@
 <ion-content padding>
   <div padding>
     <h1>{{(loadingSeminar || loadingAttendance)? "Carregando..." : seminar.name}}</h1>
-    <button ion-button block>Abrir QR Code</button>
+    <button ion-button block (click)="getQRCode()">Abrir QR Code</button>
     <h2>Presenças</h2>
     <button ion-button block (click)="addAttendance()">Adicionar presença</button>
     <ion-list>

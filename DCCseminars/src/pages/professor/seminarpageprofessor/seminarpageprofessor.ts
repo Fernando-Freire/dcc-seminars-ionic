@@ -46,20 +46,21 @@ export class Seminarpageprofessor {
     ).subscribe(
       (response) => {
         this.attendances = response.json().data;
-        console.log(this.attendances);
         this.loadingAttendance = false;
       },
       (error) => {
       }
     )
-    this.barcodeScanner.encode('QR_CODE',this.id).then(
-      (encoded) => {
-        console.log(encoded);
-      }
-    );
   }
 
   addAttendance() {
     this.navCtrl.push(Addattendance, {id: this.id})
+  }
+
+  getQRCode() {
+    this.barcodeScanner.encode('TEXT_TYPE', this.id).then(
+      (encoded) => {
+      }
+    );
   }
 }

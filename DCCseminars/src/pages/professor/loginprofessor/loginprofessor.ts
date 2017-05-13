@@ -23,8 +23,8 @@ export class Loginprofessor {
     public navCtrl: NavController,
     public navParams: NavParams,
     private http: Http,
-    private toastCtrl: ToastController,
-    private storage: NativeStorage
+    private toastCtrl: ToastController
+    // private storage: NativeStorage
   ) {}
 
   login() {
@@ -44,9 +44,10 @@ export class Loginprofessor {
     ).subscribe(
       (response) => {
         let wasSuccessful = response.json().success
+        console.log(wasSuccessful);
         if (wasSuccessful){
-          this.storage.setItem('professornusp',this.usernusp);
-          this.storage.setItem('professorpass',this.userpassword);
+          // this.storage.setItem('professornusp',this.usernusp);
+          // this.storage.setItem('professorpass',this.userpassword);
           this.navCtrl.setRoot(Seminarsprofessor);
         }
         else {
@@ -54,17 +55,19 @@ export class Loginprofessor {
         }
       },
       (error) => {
+        console.log(error);
+        console.log(error.message);
         toast.present()
       }
     )
   }
 
   ionViewDidLoad() {
-    this.storage.getItem('studentnusp').then(
-      () => this.usernusp
-    );
-    this.storage.getItem('studentpass').then(
-      () => this.userpassword
-    );
+    // this.storage.getItem('studentnusp').then(
+    //   () => this.usernusp
+    // );
+    // this.storage.getItem('studentpass').then(
+    //   () => this.userpassword
+    // );
   }
 }

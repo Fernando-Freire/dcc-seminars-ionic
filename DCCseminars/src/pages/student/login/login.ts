@@ -32,7 +32,6 @@ export class Loginstudent {
       this.loginOptions
     ).subscribe(
       (response) => { let wasSuccessful = response.json().success
-        console.log(response);
         if (wasSuccessful){
           this.storage.setItem('studentnusp',this.usernusp);
           this.storage.setItem('studentpass',this.userpassword);
@@ -47,8 +46,6 @@ export class Loginstudent {
   }
 
   notifyLoginFailure() {
-    console.log("Notifying login failure student...");
-
     let toast = this.toastCtrl.create({
       message: 'Erro: campos inválidos',
       duration: 3000,
@@ -58,12 +55,11 @@ export class Loginstudent {
     toast.present()
   }
   ionViewDidLoad(){
-    this.storage.getItem('studentnusp').then(
-      () => this.usernusp
-    );
-    this.storage.getItem('studentpass').then(
-      () => this.userpassword
-    );
-
+    // this.storage.getItem('studentnusp').then(
+    //   () => this.usernusp
+    // );
+    // this.storage.getItem('studentpass').then(
+    //   () => this.userpassword
+    // );
   }
 }

@@ -14,9 +14,9 @@ import { NativeStorage } from '@ionic-native/native-storage';
 export class Seminardetail {
 
   loading: boolean = true;
+
   id: string;
   nusp: string;
-  barcodeData: 'QR_CODE';
   seminar: Seminar;
   seminarId: string;
   data:  {
@@ -36,18 +36,17 @@ export class Seminardetail {
 
   ionViewDidLoad() {
     this.storage.getItem('studentnusp').then(
-      () => this.nusp
+      (nusp) => {
+        this.nusp = nusp;
+      }
     );
-    let toastscanerror = this.toastCtrl.create({
-      message: 'Erro em ler o QR CODE',
-      duration: 3000,
-      position: 'bottom'
-    });
+
     let toastseminargeterror = this.toastCtrl.create({
-      message: 'Erro em conseguirdetalhes do seminário',
+      message: 'Erro carregando seminário',
       duration: 3000,
       position: 'bottom'
     });
+
     this.http.get('http://207.38.82.139:8001/seminar/get/' + this.id).subscribe(
       (response) => {
         this.seminar = response.json().data as Seminar
@@ -57,46 +56,58 @@ export class Seminardetail {
         toastseminargeterror.present();
       }
     )
-    var self = this;
-    this.barcodeScanner.scan().then((barcodeData) => {
-     // Success! Barcode data is here
-     let data = barcodeData;
-     let seminarId = this.data.id;
-     self.submit(self.nusp,seminarId)
-    }, (err) => {
-        toastscanerror.present();
-    });
   }
 
-  submit(nusp:string,seminarId:string) {
+  scanQRCode() {
+    var self = this;
+    let toastscanerror = this.toastCtrl.create({
+      message: 'Erro ao ler o QR code',
+      duration: 3000,
+      position: 'bottom'
+    });
+
+    this.barcodeScanner.scan().then(
+      (barcodeData) => {
+        if (!barcodeData.cancelled) {
+          let seminarId = barcodeData.text;
+          self.submit(self.nusp, seminarId);
+        }        
+      }, (err) => {
+        toastscanerror.present();
+      }
+    );
+  }
+
+  submit(nusp:string, seminarId:string) {
     this.loading = true;
+    var self = this;
 
     let headers = new Headers({"Content-Type": "application/x-www-form-urlencoded"});
     let options = new RequestOptions({ headers: headers});
+
     let toastsuccess = this.toastCtrl.create({
-      message: 'Presença adicionada',
+      message: "Presença confirmada",
       duration: 5000,
       position: 'bottom'
     });
 
     this.http.post(
       "http://207.38.82.139:8001/attendence/submit",
-      `nusp=${this.nusp}&seminar_id=${this.seminarId}`,
+      "nusp=" + nusp + "&seminar_id= " + seminarId,
       options
     ).subscribe(
       (response) => {
         let wasSuccessful: boolean = response.json().success;
         if (wasSuccessful) {
           toastsuccess.present();
-          this.loading = true;
         } else {
-          this.notifyError();
+          self.notifyError();
         }
-        this.loading = false;
+        self.loading = false;
       },
       (error) => {
-        this.notifyError();
-        this.loading = false;
+        self.notifyError();
+        self.loading = false;
       }
     )
   }

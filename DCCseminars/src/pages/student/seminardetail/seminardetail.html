@@ -7,5 +7,5 @@
 <ion-content padding>
   <h1>{{loading? "Carregando..." : seminar.name}}</h1>
   <p>Confirme sua presença utilizando o QR code disponibilizado pelo professor.</p>
-  <button ion-button [disabled]="loading" block>Confirmar presença</button>
+  <button ion-button [disabled]="loading" (click)="scanQRCode()" block>Confirmar presença</button>
 </ion-content>

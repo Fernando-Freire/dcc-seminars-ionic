@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Editar Perfil</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list inset>
+    <ion-item>
+      <ion-label>Nome</ion-label>
+      <ion-input [(ngModel)]="username" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>NUSP</ion-label>
+      <ion-input [(ngModel)]="usernusp" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input [(ngModel)]="userpassword" type="password"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <div padding>
+    <button ion-button (click)="updateprofessor()" block>Alterar</button>
+  </div>
+</ion-content>

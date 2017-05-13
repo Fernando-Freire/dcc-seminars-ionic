@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Seminário</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div padding>
+    <h1>{{(loadingSeminar || loadingAttendance)? "Carregando..." : seminar.name}}</h1>
+    <button ion-button block>Abrir QR Code</button>
+    <h2>Presenças</h2>
+    <button ion-button block (click)="addAttendance()">Adicionar presença</button>
+    <ion-list>
+      <ion-item *ngFor="let attendance of attendances">
+        {{attendance.student_nusp}}
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

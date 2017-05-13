@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Seminário</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>{{loading? "Carregando..." : seminar.name}}</h1>
+  <p>Confirme sua presença utilizando o QR code disponibilizado pelo professor.</p>
+  <button ion-button [disabled]="loading" block>Confirmar presença</button>
+</ion-content>

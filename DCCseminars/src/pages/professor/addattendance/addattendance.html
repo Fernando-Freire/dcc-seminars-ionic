@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Adicionar presença</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list inset>
+    <ion-item>
+      <ion-label>Nº USP</ion-label>
+      <ion-input [(ngModel)]="nusp" type="numeric" [disabled]="loading"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <div padding>
+    <button ion-button (click)="submit()" block [disabled]="loading || nusp.length == 0">Adicionar</button>
+  </div>
+</ion-content>

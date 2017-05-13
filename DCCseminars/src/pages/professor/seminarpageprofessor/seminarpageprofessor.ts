@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import { Seminar } from '../../../app/seminar';
 import { Addattendance } from '../addattendance/addattendance';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 @IonicPage()
 @Component({
@@ -20,7 +21,8 @@ export class Seminarpageprofessor {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private http: Http
+    private http: Http,
+    private barcodeScanner: BarcodeScanner
   ) {
     this.id = navParams.get("id");
   }
@@ -50,6 +52,11 @@ export class Seminarpageprofessor {
       (error) => {
       }
     )
+    this.barcodeScanner.encode('QR_CODE',this.id).then(
+      (encoded) => {
+        console.log(encoded);
+      }
+    );
   }
 
   addAttendance() {

@@ -23,13 +23,18 @@ export class Register {
   registerstudent(){
     let headers = new Headers({"Content-Type": "application/x-www-form-urlencoded"});
     let options = new RequestOptions({ headers: headers});
-    let toast1 = this.toastCtrl.create({
+    let toastsuccess = this.toastCtrl.create({
       message: 'Aluno registrado com sucesso',
       duration: 3000,
       position: 'bottom'
     });
-    let toast = this.toastCtrl.create({
+    let toasterror = this.toastCtrl.create({
       message: 'Erro: campos invalidos',
+      duration: 3000,
+      position: 'bottom'
+    });
+    let toastduplicate = this.toastCtrl.create({
+      message: 'Cadastro ja efetuado',
       duration: 3000,
       position: 'bottom'
     });
@@ -39,17 +44,14 @@ export class Register {
       options
       ).subscribe(
         (response) => { let wasSuccessful = response.json().success
-          if (wasSuccessful){
-            toast1.present();
+          if (wasSuccessful) {
+            toastsuccess.present();
           }
-         else{
-
-           toast.present();
-         }
-       }
+          else {
+           toasterror.present();
+          }
+        }
       )
-
-
   }
 
 }

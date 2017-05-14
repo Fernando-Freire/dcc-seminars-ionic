@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Login Professor</ion-title>
+    <ion-title>Professor</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,16 +16,16 @@
 <ion-content padding>
   <ion-list inset>
     <ion-item>
-      <ion-label>NUSP</ion-label>
+      <ion-label>Número USP</ion-label>
       <ion-input [(ngModel)]="usernusp" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label>Password</ion-label>
+      <ion-label>Senha</ion-label>
       <ion-input [(ngModel)]="userpassword" type="password"></ion-input>
     </ion-item>
   </ion-list>
   <div padding>
-    <button ion-button (click)="login()" block>Login</button>
+    <button ion-button (click)="login()" block>Entrar</button>
   </div>
 </ion-content>

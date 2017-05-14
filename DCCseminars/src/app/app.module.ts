@@ -18,7 +18,6 @@ import { Seminarsprofessor } from '../pages/professor/seminarsprofessor/seminars
 import { Seminarpageprofessor } from '../pages/professor/seminarpageprofessor/seminarpageprofessor';
 import { Addprofessor } from '../pages/professor/addprofessor/addprofessor';
 import { Editprofessor } from '../pages/professor/editprofessor/editprofessor';
-import { Editseminar } from '../pages/professor/editseminar/editseminar';
 import { Addseminar } from '../pages/professor/addseminar/addseminar';
 import { Seminardetail } from '../pages/student/seminardetail/seminardetail';
 import { Addattendance } from '../pages/professor/addattendance/addattendance';
@@ -40,7 +39,6 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     Addprofessor,
     Editprofessor,
     Addseminar,
-    Editseminar,
     Seminardetail,
     Addattendance
   ],
@@ -65,7 +63,6 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     Addprofessor,
     Editprofessor,
     Addseminar,
-    Editseminar,
     Seminardetail,
     Addattendance
   ],

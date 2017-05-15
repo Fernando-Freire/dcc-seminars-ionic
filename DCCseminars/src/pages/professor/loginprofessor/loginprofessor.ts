@@ -29,7 +29,7 @@ export class Loginprofessor {
 
   login() {
     let toast = this.toastCtrl.create({
-      message: 'Erro: campos inválidos',
+      message: 'Não foi possível fazer o login',
       duration: 3000,
       position: 'bottom'
     });

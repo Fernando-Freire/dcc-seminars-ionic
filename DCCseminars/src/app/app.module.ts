@@ -11,7 +11,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from '@angular/http';
 import { Loginprofessor } from '../pages/professor/loginprofessor/loginprofessor';
-import { Updateprofessor } from '../pages/professor/updateprofessor/updateprofessor';
 import { Updatestudent } from '../pages/student/updatestudent/updatestudent';
 import { Seminarsstudent } from '../pages/student/seminarsstudent/seminarsstudent';
 import { Seminarsprofessor } from '../pages/professor/seminarsprofessor/seminarsprofessor';
@@ -31,7 +30,6 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     Loginstudent,
     Choice,
     Loginprofessor,
-    Updateprofessor,
     Updatestudent,
     Seminarsstudent,
     Seminarsprofessor,
@@ -56,7 +54,6 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     Choice,
     Loginprofessor,
     Updatestudent,
-    Updateprofessor,
     Seminarsstudent,
     Seminarsprofessor,
     Seminarpageprofessor,

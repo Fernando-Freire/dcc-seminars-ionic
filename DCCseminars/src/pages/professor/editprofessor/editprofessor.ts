@@ -18,7 +18,7 @@ export class Editprofessor {
     public navParams: NavParams,
     private toastCtrl: ToastController,
     private http: Http
-    // private storage: NativeStorage
+    // private storage: NativeStorage obs:Native Storage incompativel com teste de browser
   ) {}
 
   updateprofessor() {
@@ -34,7 +34,7 @@ export class Editprofessor {
     });
 
     let toasterror = this.toastCtrl.create({
-      message: 'Erro: campos invalidos',
+      message: 'Erro: não foi possível atualizar seu Cadastro' ,
       duration: 3000,
       position: 'bottom'
     });

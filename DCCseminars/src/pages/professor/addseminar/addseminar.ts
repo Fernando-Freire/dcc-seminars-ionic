@@ -30,7 +30,7 @@ export class Addseminar {
       position: 'bottom'
     });
     let toasterror = this.toastCtrl.create({
-      message: 'Erro: campos invalidos',
+      message: 'Erro: não foi possível adicionar o seminário',
       duration: 3000,
       position: 'bottom'
     });

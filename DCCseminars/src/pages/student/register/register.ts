@@ -24,20 +24,16 @@ export class Register {
     let headers = new Headers({"Content-Type": "application/x-www-form-urlencoded"});
     let options = new RequestOptions({ headers: headers});
     let toastsuccess = this.toastCtrl.create({
-      message: 'Aluno registrado com sucesso',
+      message: 'Cadastro Feito com sucesso',
       duration: 3000,
       position: 'bottom'
     });
     let toasterror = this.toastCtrl.create({
-      message: 'Erro: campos invalidos',
+      message: 'Erro: não foi possível efetuar o Cadastro',
       duration: 3000,
       position: 'bottom'
     });
-    let toastduplicate = this.toastCtrl.create({
-      message: 'Cadastro ja efetuado',
-      duration: 3000,
-      position: 'bottom'
-    });
+
     this.http.post(
       "http://207.38.82.139:8001/student/add",
       `nusp=${this.usernusp}&pass=${this.userpassword}&name=${this.username}`,

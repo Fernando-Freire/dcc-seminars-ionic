@@ -27,12 +27,12 @@ export class Updatestudent {
     let headers = new Headers({"Content-Type": "application/x-www-form-urlencoded"});
     let options = new RequestOptions({ headers: headers});
     let toasterror = this.toastCtrl.create({
-      message: 'Erro: campos invalidos',
+      message: 'Erro: não foi possível alterar seu Cadastro',
       duration: 3000,
       position: 'bottom'
     });
     let toastsuccess = this.toastCtrl.create({
-      message: 'Seu Cadastro foi Alterado com Sucesso',
+      message: 'Cadastro foi Alterado com Sucesso',
       duration: 5000,
       position: 'bottom'
     });

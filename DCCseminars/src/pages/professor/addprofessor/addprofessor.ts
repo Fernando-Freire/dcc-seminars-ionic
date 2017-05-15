@@ -25,12 +25,12 @@ export class Addprofessor {
     let headers = new Headers({"Content-Type": "application/x-www-form-urlencoded"});
     let options = new RequestOptions({ headers: headers});
     let toastsuccess = this.toastCtrl.create({
-      message: 'Professor registrado com sucesso',
+      message: 'Cadastrado feito com sucesso',
       duration: 5000,
       position: 'bottom'
     });
     let toasterror = this.toastCtrl.create({
-      message: 'Erro: campos invalidos',
+      message: 'Erro: não foi possível efetuar o Cadastro',
       duration: 3000,
       position: 'bottom'
     });

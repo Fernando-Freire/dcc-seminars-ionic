@@ -23,8 +23,8 @@ export class Loginprofessor {
     public navCtrl: NavController,
     public navParams: NavParams,
     private http: Http,
-    private toastCtrl: ToastController
-    // private storage: NativeStorage
+    private toastCtrl: ToastController,
+    private storage: NativeStorage
   ) {}
 
   login() {
@@ -46,8 +46,8 @@ export class Loginprofessor {
         let wasSuccessful = response.json().success
         console.log(wasSuccessful);
         if (wasSuccessful){
-          // this.storage.setItem('professornusp',this.usernusp);
-          // this.storage.setItem('professorpass',this.userpassword);
+          this.storage.setItem('usernusp',this.usernusp);
+          this.storage.setItem('userpass',this.userpassword);
           this.navCtrl.setRoot(Seminarsprofessor);
         }
         else {

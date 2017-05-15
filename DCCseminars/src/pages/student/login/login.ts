@@ -33,8 +33,8 @@ export class Loginstudent {
     ).subscribe(
       (response) => { let wasSuccessful = response.json().success
         if (wasSuccessful){
-          this.storage.setItem('studentnusp',this.usernusp);
-          this.storage.setItem('studentpass',this.userpassword);
+          this.storage.setItem('usernusp',this.usernusp);
+          this.storage.setItem('userpass',this.userpassword);
           this.navCtrl.setRoot(Seminarsstudent);
         }
         else {
@@ -55,10 +55,10 @@ export class Loginstudent {
     toast.present()
   }
   ionViewDidLoad(){
-    // this.storage.getItem('studentnusp').then(
+    // this.storage.getItem('usernusp').then(
     //   () => this.usernusp
     // );
-    // this.storage.getItem('studentpass').then(
+    // this.storage.getItem('userpass').then(
     //   () => this.userpassword
     // );
   }

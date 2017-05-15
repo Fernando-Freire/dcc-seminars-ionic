@@ -16,7 +16,7 @@ export class Seminardetail {
   loading: boolean = true;
 
   id: string;
-  nusp: string;
+  usernusp: string;
   seminar: Seminar;
   seminarId: string;
   data:  {
@@ -35,11 +35,9 @@ export class Seminardetail {
   }
 
   ionViewDidLoad() {
-    this.storage.getItem('studentnusp').then(
-      (nusp) => {
-        this.nusp = nusp;
-      }
-    );
+    this.storage.getItem('usernusp').then(
+       () => this.usernusp
+     );
 
     let toastseminargeterror = this.toastCtrl.create({
       message: 'Erro carregando seminário',
@@ -70,8 +68,8 @@ export class Seminardetail {
       (barcodeData) => {
         if (!barcodeData.cancelled) {
           let seminarId = barcodeData.text;
-          self.submit(self.nusp, seminarId);
-        }        
+          self.submit(self.usernusp, seminarId);
+        }
       }, (err) => {
         toastscanerror.present();
       }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { Http, RequestOptions, Headers } from '@angular/http';
+import { NativeStorage } from '@ionic-native/native-storage';
 /**
  * Generated class for the Updatestudent page.
  *
@@ -17,7 +18,11 @@ export class Updatestudent {
   private userpassword:any ;
   private username:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private http: Http) {
+  constructor(public navCtrl: NavController,
+     public navParams: NavParams,
+      private toastCtrl: ToastController,
+       private http: Http,
+      private storage:NativeStorage) {
   }
 
   ionViewDidLoad() {
@@ -26,6 +31,9 @@ export class Updatestudent {
   update(){
     let headers = new Headers({"Content-Type": "application/x-www-form-urlencoded"});
     let options = new RequestOptions({ headers: headers});
+    this.storage.getItem('usernusp').then(
+       () => this.usernusp
+     );
     let toasterror = this.toastCtrl.create({
       message: 'Erro: não foi possível alterar seu Cadastro',
       duration: 3000,

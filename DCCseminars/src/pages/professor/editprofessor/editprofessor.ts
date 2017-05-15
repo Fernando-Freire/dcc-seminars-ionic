@@ -12,21 +12,16 @@ export class Editprofessor {
   private usernusp:string;
   private userpassword:string;
   private username:string;
-
-  constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
-    private toastCtrl: ToastController,
-    private http: Http
-    // private storage: NativeStorage obs:Native Storage incompativel com teste de browser
-  ) {}
+  constructor( public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private http: Http, private storage: NativeStorage) {
+  }
 
   updateprofessor() {
     let headers = new Headers({"Content-Type": "application/x-www-form-urlencoded"});
     let options = new RequestOptions({ headers: headers});
-    // this.storage.getItem('professornusp').then(
-    //   () => this.usernusp
-    // );
+
+    this.storage.getItem('usernusp').then(
+       () => this.usernusp
+     );
     let toastsuccess = this.toastCtrl.create({
       message: 'Cadastro alterado com sucesso',
       duration: 5000,

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angular';
 import { Http, RequestOptions, Headers } from '@angular/http';
-import { Seminarsprofessor } from '../seminarsprofessor/seminarsprofessor'
 /**
  * Generated class for the Addseminar page.
  *
